@@ -22,7 +22,7 @@ app.use(cors(corsOptions));
 app.options('*', cors(corsOptions));
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the DZI Daemon Server!');
+  res.send('Welcome to the Marketing Birbal Server!');
 });
 
 
