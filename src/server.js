@@ -7,11 +7,12 @@ const newsletterRoutes = require("./routes/newsletterRoutes");
 
 const app = express();
 app.use(express.json());
-const corsOptions = {
-  origin: ["https://marketingbirbal.com", "http://localhost:3000"], 
-  methods: "POST",
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
+
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://marketingbirbal.com'], // Allow local and production frontend
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true
+}));
 
 app.use(cors(corsOptions));
 
