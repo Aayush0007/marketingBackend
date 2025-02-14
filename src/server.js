@@ -8,12 +8,14 @@ const newsletterRoutes = require("./routes/newsletterRoutes");
 const app = express();
 app.use(express.json());
 
-app.use(cors({
+// ✅ Define CORS options properly
+const corsOptions = {
   origin: ['http://localhost:3000', 'https://marketingbirbal.com'], // Allow local and production frontend
   methods: 'GET,POST,PUT,DELETE',
   credentials: true
-}));
+};
 
+// ✅ Use the defined corsOptions only once
 app.use(cors(corsOptions));
 
 app.use("/api", contactRoutes);
