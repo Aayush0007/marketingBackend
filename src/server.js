@@ -21,6 +21,11 @@ app.use(cors(corsOptions));
 // ✅ Manually handle OPTIONS preflight requests
 app.options('*', cors(corsOptions));
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the DZI Daemon Server!');
+});
+
+
 app.use("/api", contactRoutes);
 app.use("/api", serviceContactRoutes);
 app.use("/api", newsletterRoutes);
